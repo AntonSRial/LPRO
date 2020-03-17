@@ -7,9 +7,12 @@ import { HolaMundo } from './componente test/component.test';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { HomeComponent } from './home/home.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { ResultComponent } from './result/result.component';
 
 //Routes
 import {app_routing} from "./app.routes";
+import { SinginComponent } from './singin/singin.component';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +20,9 @@ import {app_routing} from "./app.routes";
     HolaMundo,
     ToolbarComponent,
     HomeComponent,
-    CalendarComponent
+    CalendarComponent,
+    ResultComponent,
+    SinginComponent
   ],
   imports: [
     BrowserModule,

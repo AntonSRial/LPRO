@@ -1,0 +1,13 @@
+.main {
+    background: navy !important;
+}
+
+.btn {
+    background-color: rgb(255, 158, 177);
+    border-color: rgb(255, 158, 177);
+}
+
+.col-med {
+    margin-left: 15cm;
+    margin-top: 0cm;
+}
