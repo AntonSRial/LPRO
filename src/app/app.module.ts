@@ -12,6 +12,8 @@ import { ResultComponent } from './result/result.component';
 //Routes
 import {app_routing} from "./app.routes";
 import { SinginComponent } from './singin/singin.component';
+import { UserComponent } from './user/user.component';
+import { PatientsComponent } from './patients/patients.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { SinginComponent } from './singin/singin.component';
     HomeComponent,
     CalendarComponent,
     ResultComponent,
-    SinginComponent
+    SinginComponent,
+    UserComponent,
+    PatientsComponent
   ],
   imports: [
     BrowserModule,

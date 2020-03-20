@@ -22,12 +22,12 @@ export class CalendarComponent implements OnInit {
                      eventLimit : true,
                      events: [
                          {
-                             title : 'Apertura Foro Tecnoloxico',
+                             title : 'Prueba 1',
                              start : '2020-03-04T13:00:00',
                              color : '#f9c66a' // override!
                          },
                          {
-                             title : 'Cuarentena rica',
+                             title : 'Cuarentena',
                              start : '2020-03-13T12:30:00',
                              end   : '2020-03-29',
                              color : "#019efb"

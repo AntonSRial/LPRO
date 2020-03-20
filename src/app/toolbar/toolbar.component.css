@@ -1,4 +1,15 @@
-.navbar-expand-md{
-  background-color: rgb(71, 71, 71);
-  color: black;
+.navbar-expand-md {
+    background-color: rgb(71, 71, 71);
+    color: black;
+}
+
+.dropdown-menu {
+    margin-top: 2mm;
+    color: rgb(255, 158, 177) !important;
+    background-color: rgb(221, 220, 220);
+    border-color: rgb(255, 158, 177);
+}
+
+.dropdown-item{
+    color:  rgb(255, 158, 177);
 }

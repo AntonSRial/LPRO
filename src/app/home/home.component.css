@@ -1,5 +1,6 @@
-.main {
-    background: navy !important;
+.container-fluid{
+background-color: rgb(221, 220, 220);
+margin-top: 1.4cm;
 }
 
 .btn {
@@ -7,7 +8,6 @@
     border-color: rgb(255, 158, 177);
 }
 
-.col-med {
-    margin-left: 15cm;
-    margin-top: 0cm;
+.col-md-5 {
+    margin-top: 1.5cm;
 }
