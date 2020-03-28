@@ -5,13 +5,21 @@
         </div>
     </div>
     <div class="row ">
-        <div class="col-md-6 ">
-            <h2>Nombre de ejemplo</h2>
-            <p>Fecha de nacimiento </p>
-            <p>Número de teléfono </p>
-            <p>Domicilio </p>
-            <p>Más datos...</p>
-            <p><a class="btn btn-primary btn-lg " routerLink="/edit_user" role="button ">Editar Datos &raquo;</a></p>
+        <div class="col-md-2 ">
+            <form id="tab">
+                <label>Usuario</label>
+                <input type="text" value="doct123" class="input-xlarge">
+                <label>Nombre</label>
+                <input type="text" value="Nombre" class="input-xlarge">
+                <label>Apellidos</label>
+                <input type="text" value="Apellidos" class="input-xlarge">
+                <label>Email</label>
+                <input type="text" value="jsmith@yourcompany.com" class="input-xlarge">
+                <label>Dirección</label>
+                <textarea value="Smith" rows="3" class="input-xlarge">Calle Falsa, 123 - Vigo
+        </textarea>
+                <p><a class="btn btn-primary btn-lg " href="/user" role="button ">Actualizar datos &raquo;</a></p>
+            </form>
         </div>
     </div>
 </div>

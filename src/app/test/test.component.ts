@@ -23,9 +23,6 @@ import {
   CalendarView
 } from 'angular-calendar';
 
-import { registerLocaleData } from '@angular/common';
-import localeEs from '@angular/common/locales/es';
-
 const colors: any = {
   red: {
     primary: '#ad2121',
@@ -40,17 +37,18 @@ const colors: any = {
     secondary: '#FDF1BA'
   }
 };
+
 @Component({
-  selector: 'calendar',
-  templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.css']
+  selector: 'test',
+  templateUrl: './test.component.html',
+  styleUrls: ['./test.component.css']
 })
-export class CalendarComponent {
+
+
+export class TestComponent {
   @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
 
   view: CalendarView = CalendarView.Month;
-
-  locale: string = 'es';
 
   CalendarView = CalendarView;
 
@@ -85,7 +83,7 @@ export class CalendarComponent {
     {
       start: subDays(startOfDay(new Date()), 1),
       end: addDays(new Date(), 1),
-      title: 'Evento 1',
+      title: 'A 3 day event',
       color: colors.red,
       actions: this.actions,
       allDay: true,
@@ -97,21 +95,21 @@ export class CalendarComponent {
     },
     {
       start: startOfDay(new Date()),
-      title: 'Evento 2',
+      title: 'An event with no end date',
       color: colors.yellow,
       actions: this.actions
     },
     {
       start: subDays(endOfMonth(new Date()), 3),
       end: addDays(endOfMonth(new Date()), 3),
-      title: 'Evento 3',
+      title: 'A long event that spans 2 months',
       color: colors.blue,
       allDay: true
     },
     {
       start: addHours(startOfDay(new Date()), 2),
       end: addHours(new Date(), 2),
-      title: 'Evento 4',
+      title: 'A draggable and resizable event',
       color: colors.yellow,
       actions: this.actions,
       resizable: {
