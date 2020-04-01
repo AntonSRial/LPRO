@@ -1,0 +1,13 @@
+.container-fluid{
+  background-color: rgb(238, 238, 238);
+  margin-top: 1.4cm;
+}
+
+.btn {
+  background-color: rgb(255, 158, 177);
+  border-color: rgb(255, 158, 177);
+}
+
+.col-md-5 {
+  margin-top: 1.5cm;
+}
