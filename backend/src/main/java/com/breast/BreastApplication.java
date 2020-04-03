@@ -31,7 +31,7 @@ public class BreastApplication {
 
         myController.insertUser(usuario);
         //myController.getUserById("12");
-        myController.findAll();
+        //myController.findAll();
         return null;
     }
 

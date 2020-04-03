@@ -26,6 +26,7 @@ import localeEs from '@angular/common/locales/es';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { EditHomeComponent } from './edit-home/edit-home.component';
 import {UserService} from "./service/UserService";
+import {ResultsService} from "./service/ResultsService";
 registerLocaleData(localeEs);
 
 @NgModule({
@@ -54,7 +55,7 @@ registerLocaleData(localeEs);
     }),
     app_routing
   ],
-  providers: [UserService],
+  providers: [UserService, ResultsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

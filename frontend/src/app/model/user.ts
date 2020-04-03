@@ -3,6 +3,11 @@ export class User {
   private _id: string;
   private _name: string;
   private _fechaNacimiento: string;
+  private _contrasena: string;
+  private _correo: string;
+  private _medicacion: string;
+  private _dolenciaEstudio: string;
+  private _rol: string;
 
   get id(): string {
     return this._id;
@@ -28,7 +33,45 @@ export class User {
     this._fechaNacimiento = value;
   }
 
+  get contrasena() {
+    return this._contrasena;
+  }
 
+  set contrasena(value) {
+    this._contrasena = value;
+  }
+
+  get correo() {
+    return this._correo;
+  }
+
+  set correo(value) {
+    this._correo = value;
+  }
+
+  get medicacion() {
+    return this._medicacion;
+  }
+
+  set medicacion(value) {
+    this._medicacion = value;
+  }
+
+  get dolenciaEstudio() {
+    return this._dolenciaEstudio;
+  }
+
+  set dolenciaEstudio(value) {
+    this._dolenciaEstudio = value;
+  }
+
+  get rol() {
+    return this._rol;
+  }
+
+  set rol(value) {
+    this._rol = value;
+  }
 
 
 

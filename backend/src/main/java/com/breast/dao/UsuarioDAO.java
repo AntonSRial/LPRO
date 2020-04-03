@@ -13,7 +13,6 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
-//import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
@@ -40,8 +39,8 @@ public class UsuarioDAO extends JdbcDaoSupport implements UsuarioDAOService{
     public void insertUser(UsuarioModel user) {
         String sql = "INSERT INTO usuario " +
                 "(id, nombre, contrasena, correo, fecha_nacimiento, medicacion, dolencia, rol) VALUES (?, ?,?,?,?,?,?,?)";
-        getJdbcTemplate().update(sql, new Object[]{user.getId(), user.getName(), "", "", "", "", "", ""
-        });
+        getJdbcTemplate().update(sql, new Object[]{user.getId(), user.getName(), user.getContrasena(), user.getCorreo(),
+                user.getFechaNacimiento(), user.getMedicacion(), user.getDolenciaEstudio(), user.getRol()});
     }
 
     @Override
@@ -54,6 +53,12 @@ public class UsuarioDAO extends JdbcDaoSupport implements UsuarioDAOService{
                 UsuarioModel user = new UsuarioModel();
                 user.setId(rs.getString("id"));
                 user.setName(rs.getString("nombre"));
+                user.setName(rs.getString("contrasena"));
+                user.setName(rs.getString("correo"));
+                user.setName(rs.getString("fecha_nacimiento"));
+                user.setName(rs.getString("medicacion"));
+                user.setName(rs.getString("dolencia"));
+                user.setName(rs.getString("rol"));
                 return user;
             }
         });
@@ -61,7 +66,7 @@ public class UsuarioDAO extends JdbcDaoSupport implements UsuarioDAOService{
 
     @Override
     public List<UsuarioModel> findAll() {
-        String sql = "SELECT * FROM USUARIO WHERE id= 1";
+        String sql = "SELECT * FROM USUARIO";
         List<Map<String, Object>> rows = getJdbcTemplate().queryForList(sql);
 
         List<UsuarioModel> result = new ArrayList<UsuarioModel>();
@@ -69,8 +74,42 @@ public class UsuarioDAO extends JdbcDaoSupport implements UsuarioDAOService{
                 UsuarioModel user = new UsuarioModel();
                 user.setId((String)row.get("id"));
                 user.setName((String)row.get("nombre"));
+                user.setName((String)row.get("contrasena"));
+                user.setName((String)row.get("correo"));
+                user.setName((String)row.get("fecha_nacimiento"));
+                user.setName((String)row.get("medicacion"));
+                user.setName((String)row.get("dolencia"));
+                user.setName((String)row.get("rol"));
                 result.add(user);
         }
         return result;
     }
+
+    @Override
+    public void eliminateUser(String id) {
+        String sql = "DELETE FROM USUARIO WHERE id= ?";
+        getJdbcTemplate().update(sql, id);
+    }
+
+
+    @Override
+    public void modifyUSer(UsuarioModel user) {
+        //Para modificar un usuario primero lo eliminamos de bdd
+        // y después lo persistimos con los nuevos datos
+
+        String sql = "DELETE FROM USUARIO WHERE id= ?";
+        getJdbcTemplate().update(sql, user.getId());
+
+        String sql2 = "INSERT INTO usuario " +
+                "(id, nombre, contrasena, correo, fecha_nacimiento, medicacion, dolencia, rol) VALUES (?, ?,?,?,?,?,?,?)";
+        getJdbcTemplate().update(sql2, new Object[]{user.getId(), user.getName(), user.getContrasena(), user.getCorreo(),
+                user.getFechaNacimiento(), user.getMedicacion(), user.getDolenciaEstudio(), user.getRol()});
+    }
+
+
+
+
+
+
+
 }

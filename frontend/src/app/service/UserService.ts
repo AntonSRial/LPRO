@@ -17,7 +17,15 @@ export class UserService {
     return this.http.get<User[]>(this.usersUrl);
   }
 
-  public insert(user: User) {
+  public insertUser(user: User) {
+    this.http.post<User>(this.usersUrl, user);
+  }
+
+  public eliminateUser(user: User) {
     return this.http.post<User>(this.usersUrl, user);
   }
+
+
+
+
 }
