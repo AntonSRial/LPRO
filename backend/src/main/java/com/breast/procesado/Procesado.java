@@ -21,13 +21,13 @@ import java.math.*;
 
 /**
  * 
- * Clase principal donde se lee el fichero con la función LeerFichero(), se
+ * Clase principal donde se lee el fichero con la funciï¿½n LeerFichero(), se
  * procesan los datos ProcesarDatos() y se generan ficheros GenerarFicheros().
  *  
- * Todos los resultados se guardan en la clase Resultados.java, para que así sea
- * más fácil de manejar, que es lo que se devuelve en el main.
+ * Todos los resultados se guardan en la clase Resultados.java, para que asï¿½ sea
+ * mï¿½s fï¿½cil de manejar, que es lo que se devuelve en el main.
  * 
- * @author Silvia Abal Fernández
+ * @author Silvia Abal Fernï¿½ndez
  * 
  * @version 07/04/2020
  *
@@ -78,7 +78,7 @@ public class Procesado {
 			 * Apertura del fichero y creacion de BufferedReader para poder hacer una
 			 * lectura comoda (disponer del metodo readLine()).
 			 */
-			archivo = new File("DataSensors_13_35.txt");
+			archivo = new File("DataSensors.txt");
 			fr = new FileReader(archivo);
 			br = new BufferedReader(fr);
 
@@ -89,7 +89,7 @@ public class Procesado {
 				campos = linea.split(";");
 				reg.setID(Integer.parseInt(campos[0]));
 				str_fecha = campos[1].split("/");
-				// para manejar la fecha con Date tiene que tener el formato año-mes-dia
+				// para manejar la fecha con Date tiene que tener el formato aï¿½o-mes-dia
 				reg.setFecha(Date.valueOf(str_fecha[2] + "-" + str_fecha[1] + "-" + str_fecha[0]));
 				reg.setHora(LocalTime.parse(campos[2]));
 
@@ -118,14 +118,14 @@ public class Procesado {
 	}
 
 	/**
-	 *Función principal en la que se convierten los valores de tension de entrada de los sensores a sus correspondientes valores de temperatura en grados,
-	 *para después realizar los calculos de medias por año, mes, semana y hora 
+	 *Funciï¿½n principal en la que se convierten los valores de tension de entrada de los sensores a sus correspondientes valores de temperatura en grados,
+	 *para despuï¿½s realizar los calculos de medias por aï¿½o, mes, semana y hora 
 	 */
 
 	public static void ProcesarDatos() {
 		// Lo primero se convierten los datos de voltaje en temperatura
 		Ecuaciones();
-		// Se recorren los datos de temperatura para saber si hay que generar algún
+		// Se recorren los datos de temperatura para saber si hay que generar algï¿½n
 		// aviso
 		Avisos();
 		// Finalemnte se calculan las medias
@@ -138,7 +138,7 @@ public class Procesado {
 	}
 
 	/**
-	 * En esta función se convierten los valores de tensión de entrada a sus valores
+	 * En esta funciï¿½n se convierten los valores de tensiï¿½n de entrada a sus valores
 	 * de temperatura asociados
 	 */
 	public static void Ecuaciones() {
@@ -240,7 +240,7 @@ public class Procesado {
 
 	/**
 	 * Se generan los avisos cuando una de las medidas de temperatura excede el
-	 * límite de 38.2º, una vez hecho esto se sacan conclusiones por mes
+	 * lï¿½mite de 38.2ï¿½, una vez hecho esto se sacan conclusiones por mes
 	 */
 	public static void Avisos() {
 
@@ -261,7 +261,7 @@ public class Procesado {
 					reg_avisos.setHora(datos_finales.get(i).getHora());
 					reg_avisos.setID_sensor(contador_sensor);
 					avisos_temperatura.add(reg_avisos);
-					avisos.add("Día: " + datos_finales.get(i).getFecha() + " Hora: " + datos_finales.get(i).getHora()
+					avisos.add("Dï¿½a: " + datos_finales.get(i).getFecha() + " Hora: " + datos_finales.get(i).getHora()
 							+ " Sensor: " + contador_sensor + " Temperatura: " + valor_temperatura);
 				}
 			}
@@ -354,7 +354,7 @@ public class Procesado {
 					conclusion.add(va);
 				}
 				va = ("Durante el mes de " + s_mes + " del " + ano
-						+ " se ha sobrepasado la temperatura límite establecida en ");
+						+ " se ha sobrepasado la temperatura lï¿½mite establecida en ");
 				vas = "" + sensor;
 				varios = 1;
 			} else {
@@ -387,9 +387,9 @@ public class Procesado {
 		calendar.setMinimalDaysInFirstWeek(4);
 		calendar.setTime(Fecha_);
 		
-		 /*IMPORTANTE A TENER EN CUENTA, la clave de este hashmap es el año x 100 +
-		 * numero del mes, para que así se tenga en cuenta el año, a la hora de sacar la
-		 * clave del HashMap habrá que para obtener el año dividir x 100, el mes
+		 /*IMPORTANTE A TENER EN CUENTA, la clave de este hashmap es el aï¿½o x 100 +
+		 * numero del mes, para que asï¿½ se tenga en cuenta el aï¿½o, a la hora de sacar la
+		 * clave del HashMap habrï¿½ que para obtener el aï¿½o dividir x 100, el mes
 		 * quedarnos con el resto %100
 		 */
 		int ano = calendar.get(Calendar.YEAR);
@@ -455,10 +455,10 @@ public class Procesado {
 		int Mes_ = (calendar.get(Calendar.MONTH) + 1) * 100;
 		
 		/*
-		 * IMPORTANTE A TENER EN CUENTA, la clave de este hashmap es el año x 10000 +
-		 * numero del mes x 100 + numero de semana, para que así se tenga en cuenta
-		 * tanto el año como el mes, a la hora de sacar la clave del HashMap habrá que
-		 * para obtener el año dividir x 10000, el mes dividir x 100 y quedarnos con el
+		 * IMPORTANTE A TENER EN CUENTA, la clave de este hashmap es el aï¿½o x 10000 +
+		 * numero del mes x 100 + numero de semana, para que asï¿½ se tenga en cuenta
+		 * tanto el aï¿½o como el mes, a la hora de sacar la clave del HashMap habrï¿½ que
+		 * para obtener el aï¿½o dividir x 10000, el mes dividir x 100 y quedarnos con el
 		 * resto %100, la semana %100
 		 */
 
@@ -507,7 +507,7 @@ public class Procesado {
 	}
 
 	/**
-	 * Calculo de las medias de temperatura por año
+	 * Calculo de las medias de temperatura por aï¿½o
 	 * 
 	 * @param valores registro del arraylist datos_finales que es del tipo RegistroDato
 	 */
@@ -584,7 +584,7 @@ public class Procesado {
 		
 		/*
 		 * IMPORTANTE A TENER EN CUENTA, la clave de este hashmap se hace de forma
-		 * análoga a las anteriores, y para sacarla es igual que la de las semanas
+		 * anï¿½loga a las anteriores, y para sacarla es igual que la de las semanas
 		 */
 		int Mes = calendar.get(Calendar.MONTH) + 1;
 		int Ano_ = calendar.get(Calendar.YEAR);
@@ -633,9 +633,9 @@ public class Procesado {
 	}
 
 	/**
-	 * Generación de ficheros independientes con cada uno de los
- * 	resultados del calculo de medias, para que así se puedan generar
- * posteriormente las gráficas correspondientes en Matlab.
+	 * Generaciï¿½n de ficheros independientes con cada uno de los
+ * 	resultados del calculo de medias, para que asï¿½ se puedan generar
+ * posteriormente las grï¿½ficas correspondientes en Matlab.
 	 * 
 	 */
 
@@ -658,7 +658,7 @@ public class Procesado {
 		Collections.sort(keys_hora);
 
 		String medias_ano_fichero;
-		/////////////////////////// FICHERO DE MEDIAS POR AÑO
+		/////////////////////////// FICHERO DE MEDIAS POR Aï¿½O
 		/////////////////////////// ///////////////////////////
 		try {
 			fichero_ano = new FileWriter("Resultados_Medias_Ano.txt");
@@ -888,12 +888,12 @@ e2.printStackTrace();
 	}
 
 	/**
-	 * Visualización de los resultados en la consola
+	 * Visualizaciï¿½n de los resultados en la consola
 	 */
 	public static void VisualizarResultados() {
 
 		if (avisos_temperatura.isEmpty()) {
-			System.out.println("No se han registrado temperaturas que sobrepasan el límite establecido de 38.2º");
+			System.out.println("No se han registrado temperaturas que sobrepasan el lï¿½mite establecido de 38.2ï¿½");
 
 		} else {
 
@@ -901,7 +901,7 @@ e2.printStackTrace();
 			System.out.println("-----------------------AVISOS-----------------------");
 			System.out.println("");
 			System.out.println(
-					"Se han registrado las siguientes temperaturas que sobrepasan el límite establecido de 38.2º: ");
+					"Se han registrado las siguientes temperaturas que sobrepasan el lï¿½mite establecido de 38.2ï¿½: ");
 			System.out.println("");
 			for (int i = 0; i < avisos.size(); i++) {
 				System.out.println(avisos.get(i));
@@ -931,7 +931,7 @@ e2.printStackTrace();
 		System.out.println(" ");
 		System.out.println(" ");
 		System.out.println("**********************************************************************************");
-		System.out.println("********************************* MEDIAS POR AÑO *********************************");
+		System.out.println("********************************* MEDIAS POR Aï¿½O *********************************");
 		System.out.println("**********************************************************************************");
 		System.out.println(" ");
 		for (int i = 0; i < keys.size(); i++) {
@@ -939,8 +939,8 @@ e2.printStackTrace();
 			for (Map.Entry<Integer, DatosMedias> valor_ano : HashMap_medias_ano.entrySet()) {
 				if (valor_key == valor_ano.getKey()) {
 					System.out.println(" ");
-					System.out.println("------ AÑO " + valor_key + " ------- ");
-					System.out.println(" Número de medidas en el año : " + valor_ano.getValue().getContador());
+					System.out.println("------ Aï¿½O " + valor_key + " ------- ");
+					System.out.println(" Nï¿½mero de medidas en el aï¿½o : " + valor_ano.getValue().getContador());
 					System.out.println(" Medias: " + valor_ano.getValue().getMedia_medidas());
 
 				}
@@ -962,7 +962,7 @@ e2.printStackTrace();
 					if (valor_ano_anterior != valor_key_ano) {
 
 						System.out.println(" ");
-						System.out.println("------------------------------------ AÑO " + valor_key_ano
+						System.out.println("------------------------------------ Aï¿½O " + valor_key_ano
 								+ " ------------------------------------");
 					}
 					valor_ano_anterior = valor_mes.getKey() / 100;
@@ -997,7 +997,7 @@ e2.printStackTrace();
 					if (valor_ano_anterior != valor_key_ano) {
 
 						System.out.println(" ");
-						System.out.println("------------------------------------ AÑO " + valor_key_ano
+						System.out.println("------------------------------------ Aï¿½O " + valor_key_ano
 								+ " ------------------------------------");
 					}
 					valor_ano_anterior = valor_semana.getKey() / 10000;
@@ -1033,7 +1033,7 @@ e2.printStackTrace();
 				if (valor_key == valor_hora.getKey()) {
 					if (valor_ano_anterior != valor_key_ano) {
 						System.out.println(" ");
-						System.out.println("------------------------------------ AÑO " + valor_key_ano
+						System.out.println("------------------------------------ Aï¿½O " + valor_key_ano
 								+ " ------------------------------------");
 					}
 					valor_ano_anterior = valor_hora.getKey() / 10000;

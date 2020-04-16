@@ -9,7 +9,7 @@ public class RunMatlab {
 		
 	    case "meses":
 	    	try {
-				String [] cmd = {"C:\\Program Files\\MATLAB\\R2018b\\bin\\matlab.exe","-nodisplay","-nodesktop","-r","run('C:\\Users\\Media\\Documents\\MATLAB\\LPRO\\Breast\\MonthGraphs.m');"};
+				String [] cmd = {"C:\\Program Files\\MATLAB\\R2019b\\bin\\matlab.exe","-nodisplay","-nodesktop","-r","run('C:\\Users\\cande\\Documents\\MATLAB\\Breast\\MonthGraphs.m');"};
 				Runtime.getRuntime().exec(cmd).waitFor();
 			}
 			catch (IOException ioe) {
@@ -19,7 +19,7 @@ public class RunMatlab {
 			
 	    case "anos":
 	    	try {
-				String [] cmd = {"C:\\Program Files\\MATLAB\\R2018b\\bin\\matlab.exe","-nodisplay","-nodesktop","-r","run('C:\\Users\\Media\\Documents\\MATLAB\\LPRO\\Breast\\YearGraphs.m');"};
+				String [] cmd = {"C:\\Program Files\\MATLAB\\R2019b\\bin\\matlab.exe","-nodisplay","-nodesktop","-r","run('C:\\Users\\cande\\Documents\\MATLAB\\Breast\\YearGraphs.m');"};
 				Runtime.getRuntime().exec(cmd).waitFor();
 			}
 			catch (IOException ioe) {
@@ -29,7 +29,7 @@ public class RunMatlab {
 
 	    case "semanas":
 	    	try {
-				String [] cmd = {"C:\\Program Files\\MATLAB\\R2018b\\bin\\matlab.exe","-nodisplay","-nodesktop","-r","run('C:\\Users\\Media\\Documents\\MATLAB\\LPRO\\Breast\\WeekGraphs.m');"};
+				String [] cmd = {"C:\\Program Files\\MATLAB\\R2019b\\bin\\matlab.exe","-nodisplay","-nodesktop","-r","run('C:\\Users\\cande\\Documents\\MATLAB\\Breast\\WeekGraphs.m');"};
 				Runtime.getRuntime().exec(cmd).waitFor();
 			}
 			catch (IOException ioe) {
@@ -38,7 +38,7 @@ public class RunMatlab {
 	        break;
 	        
 	    default:
-        System.out.println("Elija una opción correcta");
+        System.out.println("Elija una opciÃ³n correcta");
 	        break;
 	}
 	}
