@@ -16,56 +16,61 @@ public class MyController {
     UsuarioDAO usuarioDAO;
     ResultadosDAO resultadosDAO;
 
+
+    /****USERS*****/
+
     @PostMapping("/users")
     public void insertUser(UsuarioModel user) {
         usuarioDAO.insertUser(user);
     }
 
-    /*@PostMapping("/users")
+    @PutMapping("/users")
     public void modifyUser(UsuarioModel user) {
             usuarioDAO.modifyUser(user);
-    }*/
+    }
 
-    /*@PostMapping("/users")
+    @PostMapping("/usersDelete")
     public void eliminateUser(String id) {
             usuarioDAO.eliminateUser(id);
-    }*/
+    }
 
-    /*@GetMapping("/users")
+    @GetMapping("/users")
     public void getUserById(String id) {
         usuarioDAO.getUserById(id);
-    }*/
-/*
-    @GetMapping("/users")
+    }
+
+    @GetMapping("/usersAll")
     public List<UsuarioModel> findAll() {
         return (List<UsuarioModel>) usuarioDAO.findAll();
     }
+
+    /*******RESULTS******/
 
     @GetMapping("/results")
     public List<ResultadosModel> obtenerResultados(String id) {
         return (List<ResultadosModel>) resultadosDAO.obtenerResultados(id);
     }
 
-    @GetMapping("/results")
+    @GetMapping("/resultsGeneral")
     public List<ResultadosModel> obtenerResultadosGeneral() {
-        return (List<ResultadosModel>) resultadosDAO.obtenerResultadosGeneral;
+        return (List<ResultadosModel>) resultadosDAO.obtenerResultadosGeneral();
     }
 
-    @PostMapping("/results")
+    @PostMapping("/resultsDelete")
     public void eliminateResults(String id, String fecha_hora) {
-         resultadosDAO.eliminateResults(id);
+         resultadosDAO.eliminateResults(id, fecha_hora);
     }
 
-    @PostMapping("/results")
+    @DeleteMapping("/results")
     public void eliminateAllResults(String id) {
-        resultadosDAO.eliminateAllResults;
+        resultadosDAO.eliminateAllResults(id);
     }
 
     @PostMapping("/results")
-    public insertResult(ResultadosModel result) {
+    public void insertResult(ResultadosModel result) {
         resultadosDAO.insertResult(result);
     }
-*/
+
 
 
 }

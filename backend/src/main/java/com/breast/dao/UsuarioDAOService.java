@@ -10,5 +10,5 @@ public interface UsuarioDAOService {
     UsuarioModel getUserById(String id);
     List<UsuarioModel> findAll();
     void eliminateUser(String id);
-    void modifyUSer(UsuarioModel user);
+    void modifyUser(UsuarioModel user);
 }

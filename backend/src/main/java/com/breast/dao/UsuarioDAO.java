@@ -93,7 +93,7 @@ public class UsuarioDAO extends JdbcDaoSupport implements UsuarioDAOService{
 
 
     @Override
-    public void modifyUSer(UsuarioModel user) {
+    public void modifyUser(UsuarioModel user) {
         //Para modificar un usuario primero lo eliminamos de bdd
         // y después lo persistimos con los nuevos datos
 

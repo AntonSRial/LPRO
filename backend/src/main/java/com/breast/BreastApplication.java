@@ -29,7 +29,7 @@ public class BreastApplication {
         usuario.setId("12");
         usuario.setName("Manolita Dominguez");
 
-        myController.insertUser(usuario);
+        //myController.insertUser(usuario);
         //myController.getUserById("12");
         //myController.findAll();
         return null;

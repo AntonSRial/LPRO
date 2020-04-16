@@ -13,7 +13,7 @@ export class User {
     return this._id;
   }
 
-  set id(value: string) {
+  setId(value: string) {
     this._id = value;
   }
 
@@ -21,7 +21,7 @@ export class User {
     return this._name;
   }
 
-  set name(value: string) {
+  setName(value: string) {
     this._name = value;
   }
 
