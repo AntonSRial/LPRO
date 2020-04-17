@@ -1,12 +1,11 @@
 import {
   Component,
-  ChangeDetectionStrategy,
   ViewChild,
   TemplateRef
 } from '@angular/core';
 import {
-  startOfDay,
   endOfDay,
+  startOfDay,
   subDays,
   addDays,
   endOfMonth,
@@ -22,9 +21,6 @@ import {
   CalendarEventTimesChangedEvent,
   CalendarView
 } from 'angular-calendar';
-
-import { registerLocaleData } from '@angular/common';
-import localeEs from '@angular/common/locales/es';
 
 const colors: any = {
   red: {
@@ -50,7 +46,7 @@ export class CalendarComponent {
 
   view: CalendarView = CalendarView.Month;
 
-  locale: string = 'es';
+  locale = 'es';
 
   CalendarView = CalendarView;
 
@@ -122,20 +118,14 @@ export class CalendarComponent {
     }
   ];
 
-  activeDayIsOpen: boolean = true;
+  activeDayIsOpen = true;
 
   constructor(private modal: NgbModal) {}
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
-      if (
-        (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
-        events.length === 0
-      ) {
-        this.activeDayIsOpen = false;
-      } else {
-        this.activeDayIsOpen = true;
-      }
+      this.activeDayIsOpen = !((isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
+        events.length === 0);
       this.viewDate = date;
     }
   }
