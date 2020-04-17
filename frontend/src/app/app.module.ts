@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
@@ -8,8 +9,9 @@ import { HomeComponent } from './home/home.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { ResultComponent } from './result/result.component';
 
-//Routes
-import {app_routing} from "./app_routes";
+// Routes
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {app_routing} from './app_routes';
 import { SinginComponent } from './singin/singin.component';
 import { UserComponent } from './user/user.component';
 import { PatientsComponent } from './patients/patients.component';
@@ -25,8 +27,8 @@ import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { EditHomeComponent } from './edit-home/edit-home.component';
-import {UserService} from "./service/UserService";
 import {ResultsService} from "./service/ResultsService";
+import {UserService} from './service/UserService';
 registerLocaleData(localeEs);
 
 @NgModule({
@@ -43,6 +45,8 @@ registerLocaleData(localeEs);
     EditHomeComponent
   ],
   imports: [
+    BrowserAnimationsModule,
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     CommonModule,
