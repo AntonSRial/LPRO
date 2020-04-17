@@ -10,7 +10,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { ResultComponent } from './result/result.component';
 
 // Routes
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {app_routing} from './app_routes';
 import { SinginComponent } from './singin/singin.component';
 import { UserComponent } from './user/user.component';
@@ -32,7 +32,6 @@ registerLocaleData(localeEs);
 
 @NgModule({
   declarations: [
-    // BrowserAnimationsModule,
     AppComponent,
     ToolbarComponent,
     HomeComponent,
@@ -45,6 +44,7 @@ registerLocaleData(localeEs);
     EditHomeComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
