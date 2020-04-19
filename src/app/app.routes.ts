@@ -17,7 +17,7 @@ const app_routes: Routes = [
     {path: 'singin', component: SinginComponent},
     {path: 'user', component: UserComponent},
     {path: 'patients', component: PatientsComponent},
-    {path: '**', pathMatch:'full',redirectTo:'home'} //Esto hace que cualquier ruta desconocida sea redirigida a /home
+    {path: '**', pathMatch:'full',redirectTo:'singin'} //Esto hace que cualquier ruta desconocida sea redirigida a /home
 ];
 
 export const app_routing = RouterModule.forRoot(app_routes);

@@ -1,47 +1,88 @@
 <hr>
-<!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
-    <div class="col-md-6">
-        <img src="\assets\img\diagrama_ejemplo.png" width="1200" height="500">´
-        <!-- meter otro botón para cargar result-->
+    <div class="col-md-3">
+        <div class="btn-group" style="border-color: gray !important;">
+            <div class="btn btn-primary" onclick="document.getElementById('demo').src = '/assets/img/2020.png'"> Año
+            </div>
+            <div class="btn btn-primary" onclick="document.getElementById('demo').src = '/assets/img/diagram1.png'"> Mes
+            </div>
+            <div class="btn btn-primary" onclick="document.getElementById('demo').src = '/assets/img/Semanas.png'">
+                Semana </div>
+        </div>
+        <div class="btn-group" style="border-color: gray !important; margin-left: 5mm;">
+            <div class="btn btn-primary" onclick="document.getElementById('demo').src = '/assets/img/2020.png'">
+                < </div>
+                    <div class="btn btn-primary" onclick="document.getElementById('demo').src = '/assets/img/2021.png'">
+                        > </div>
+            </div>
+            <div class="btn-group" style="border-color: gray !important; margin-top: 1cm;">
+                <div class="btn btn-primary"
+                    onclick="document.getElementById('demo').src = '/assets/img/Silvia.png'"> Enero </div>
+                <div class="btn btn-primary" onclick="document.getElementById('demo').src = ''"> Febrero </div>
+                <div class="btn btn-primary"
+                    onclick="document.getElementById('demo1').innerHTML = 'No se han registrado mediciones de esta paciente todavía.'">
+                    Marzo </div>
+                <div class="btn btn-primary" onclick="document.getElementById('demo').src = '/assets/img/April.png'"> Abril </div>
+                <div class="btn btn-primary" onclick="changeImage();"> Mayo </div>
+                <div class="btn btn-primary" onclick="changeImage();"> Junio </div>
+                <div class="btn btn-primary" onclick="changeImage();"> Julio </div>
+                <div class="btn btn-primary"
+                    onclick="document.getElementById('demo').src = '/assets/img/August.png'"> Agosto </div>
+                <div class="btn btn-primary" onclick="changeImage();"> Septiembre </div>
+                <div class="btn btn-primary" onclick="document.getElementById('demo').src = '/assets/img/October.png'">
+                    Octubre </div>
+                <div class="btn btn-primary"
+                    onclick="document.getElementById('demo').src = '/assets/img/November.png'"> Noviembre
+                </div>
+                <div class="btn btn-primary"
+                    onclick="document.getElementById('demo').src = '/assets/img/diagrama2.png'">
+                    Diciembre </div>
+
+            </div>
+        </div>
+        <div  style="margin-top: 1cm;" id="diagram">
+            <img id="demo" src="\assets\img\October.png" style="margin-right: 2cm; width:15cm">
+            <img src ="\assets\img\Distribucion.png" style="width:15cm">
+            <p id="demo1" style="margin-left: 5mm;"></p>
+            <div class="row" style="margin-top: 5mm; margin-left: 1mm; margin-top: 2cm;">
+                <p><a class="btn btn-primary btn-lg" style="margin-right: 2cm;" href="/assets/img/Resultados.txt" role="button"
+                        download>Exportar
+                        resultados &raquo;</a></p>
+                <p>
+                    <label for="files" class="btn btn-primary btn-lg">Importar resultados &raquo;</label>
+                    <input id="files" style="visibility:hidden;" type="file" accept=".pdf,.jpg,.png, .txt" multiple>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
         <div class="row">
-            <p><a class="btn btn-primary btn-lg" href="#" role="button">Exportar resultados &raquo;</a></p>
-            <p><a class="btn btn-primary btn-lg" href="#" role="button" style="margin-left: 2cm;">Importar resultados
-                    &raquo;</a></p>
+            <div class="col-md-10">
+                <h2 style="list-style-type: none;display: inline;padding-right: 5px">Conclusiones</h2>
+                <a class="btn btn-primary btn-lg" style="margin-left: 10mm;" href="/assets/img/Resultados_Avisos.txt"
+                    role="button" download>Avisos detallados
+                    &raquo;</a>
+                <!--<p style="margin-left: 5mm;">No se han registrado mediciones de esta paciente todavía.</p>-->
+                <p id="conclusion" style="margin-top: 5mm;">Durante el mes de Abril del 2020 se ha sobrepasado la
+                    temperatura límite establecida
+                    en el sensor: 10
+                </p>
+                <!--<p>Durante el mes de Abril del 2020 se ha sobrepasado la temperatura límite establecida en el sensor: 10</p>-->
+            </div>
+            <div class="col-md-10">
+                <label for="conclusion"></label>
+                <input type="text" class="form-control" id="conclusion" placeholder="" value=""
+                    placeholder="Añadir nota..." required>
+
+                <div class="btn btn-primary" style="margin-top: 5mm;"
+                    onclick="document.getElementById('conclusion').innerHTML = 'No se han registrado mediciones de esta paciente todavía.'">
+                    Actualizar
+                    &raquo;</div>
+            </div>
         </div>
     </div>
-</div>
-
-
-<div class="container">
-    <!-- Example row of columns -->
-    <div class="row">
-        <div class="col-md-10" id="conclusion">
-            <h2>Conclusiones</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum </p>
-            <!--<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>-->
-        </div>
-        <div class="col-md-10">
-            <label for="conclusion"></label>
-            <input type="text" class="form-control" id="conclusion" placeholder="" value="" placeholder="Añadir nota..."
-                required>
-
-            <p><a class="btn btn-secondary" href="#" role="button" style="margin-top: 5mm;">Actualizar
-                    &raquo;</a></p>
-        </div>
-
-        <!-- <div class="col-md-6">
-                    <h2>Visualizar pruebas</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum </p>
-                </div>-->
-    </div>
-</div>
-<footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">&copy; 2020 BReAst</p>
-</footer>
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2020 BReAst</p>
+    </footer>

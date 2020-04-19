@@ -83,10 +83,10 @@ export class CalendarComponent {
 
   events: CalendarEvent[] = [
     {
-      start: subDays(startOfDay(new Date()), 1),
-      end: addDays(new Date(), 1),
-      title: 'Evento 1',
-      color: colors.red,
+      start: new Date("2020-04-10T20:00:00.0000"),
+      end:  new Date("2020-04-10T22:00:00.0000"),
+      title: 'Ponerse el sujetador',
+      color: colors.blue,
       actions: this.actions,
       allDay: true,
       resizable: {
@@ -96,6 +96,46 @@ export class CalendarComponent {
       draggable: true
     },
     {
+      start: new Date("2020-04-17T09:00:00.0000"),
+      end:  new Date("2020-04-17T12:00:00.0000"),
+      title: 'Ponerse el sujetador',
+      color: colors.blue,
+      actions: this.actions,
+      allDay: true,
+      resizable: {
+        beforeStart: true,
+        afterEnd: true
+      },
+      draggable: true
+    },
+    {
+      start: new Date("2020-04-24T15:00:00.0000"),
+      end:  new Date("2020-04-24T17:00:00.0000"),
+      title: 'Ponerse el sujetador',
+      color: colors.blue,
+      actions: this.actions,
+      allDay: true,
+      resizable: {
+        beforeStart: true,
+        afterEnd: true
+      },
+      draggable: true
+    },
+    
+    {
+      start: new Date("2020-05-21T11:00:00.0000"),
+      end:  new Date("2020-05-21T12:00:00.0000"),
+      title: 'Cita médica',
+      color: colors.yellow,
+      actions: this.actions,
+      allDay: true,
+      resizable: {
+        beforeStart: true,
+        afterEnd: true
+      },
+      draggable: true
+    },
+   /* {
       start: startOfDay(new Date()),
       title: 'Evento 2',
       color: colors.yellow,
@@ -119,7 +159,7 @@ export class CalendarComponent {
         afterEnd: true
       },
       draggable: true
-    }
+    }*/
   ];
 
   activeDayIsOpen: boolean = true;
